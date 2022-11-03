@@ -1,4 +1,7 @@
 #!/bin/bash
+
+[[ $OSTYPE == 'darwin'* ]] && echo "Detected MACOSX... Exiting" && exit 0
+
 path="."
 do_clean=1
 
