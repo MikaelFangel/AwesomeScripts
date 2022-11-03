@@ -1,7 +1,12 @@
 #!/bin/bash
+while getopts n flag
 
-if ["$1" -eq "-n"]; then
-    find . -type d -name '__MACOSX'
-else
+do
+    case "$flag" in
+        n) find . -type d -name '__MACOSX' ;;
+    esac
+done
+
+if [ $OPTIND -eq 1 ] ; then
     find . -type d -name '__MACOSX' -exec rm -rf {} +
 fi
