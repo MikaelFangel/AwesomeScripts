@@ -1,9 +1,17 @@
 #!/bin/bash
-while getopts n flag
+while getopts nh flag
 
 do
     case "$flag" in
-        n) find . -type d -name '__MACOSX' ; find . -type f -name '.DS_STORE' ;;
+        n)
+        echo "Running a dry run..."
+        find . -type d -name '__MACOSX'
+        find . -type f -name '.DS_STORE' ;;
+        h)
+        echo \
+    'Usage:
+    -n      dry-run
+    -h      help'
     esac
 done
 
