@@ -9,9 +9,11 @@ function clean() {
     if [[ $do_clean -eq 1 ]] ; then
         find $path -type d -name '__MACOSX' -exec rm -rf {} +
         find $path -type f -name '.DS_STORE' -exec rm -rf {} +
+        find $path -type f -name '.DS_Store' -exec rm -rf {} +
     else
         find $path -type d -name '__MACOSX'
         find $path -type f -name '.DS_STORE'
+        find $path -type f -name '.DS_Store'
     fi
 }
 
