@@ -28,8 +28,9 @@ do
         h)
         echo \
     'Usage:
-    -n      dry-run
-    -h      help'
+    -n      dry-run to print what files will be removed
+    -p      set starting point in the path
+    -h      show help'
     esac
 done
 
