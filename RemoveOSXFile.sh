@@ -7,8 +7,8 @@ do_clean=1
 
 function clean() {
     if [[ $do_clean -eq 1 ]] ; then
-        find $path -type d -name '__MACOSX' -exec rm -rf {} +
-        find $path -type f \( -name '.DS_STORE' -o -name '.DS_Store' \) -exec rm -rf {} +
+        find $path -type d -name '__MACOSX' -exec rm -rfv {} +
+        find $path -type f \( -name '.DS_STORE' -o -name '.DS_Store' \) -exec rm -rfv {} +
     else
         find $path -type d -name '__MACOSX'
         find $path -type f \( -name '.DS_STORE' -o -name '.DS_Store' \)
