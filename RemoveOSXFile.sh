@@ -2,7 +2,7 @@
 
 [[ $OSTYPE == 'darwin'* ]] && echo "Detected MACOSX... Exiting" && exit 0
 
-path="."
+path=$HOME
 do_clean=1
 
 function clean() {
