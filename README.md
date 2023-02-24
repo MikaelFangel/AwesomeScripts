@@ -23,13 +23,16 @@ This script helps to create detailed commits where you properly acknowledge co-a
 ### Installation:
 I currently suggest that you create an alias for the bash script.
 ```
-alias gpolite="/path/to/gitpolite.sh"
+alias git="/path/to/gitpolite.sh"
 ```
 
 The script looks for at file containing your commonly used co-authors. It looks for a file called .gitco_suspects in the ~ directory and also looks for a file called .suspects in your current working directory. The contents of the two files is sort and duplicates are removed.
 
 ### Usage:
- - Just run the command and be aware the only way to omit adding co-authors is to hit CTRL-C when at the selection screen.
+```
+git polite
+```
+ -  Be aware the only way to omit adding co-authors is to hit CTRL-C when at the selection screen.
 
 ### Dependencies:
  - [gum](https://github.com/charmbracelet/gum)
