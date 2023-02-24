@@ -2,7 +2,7 @@
 This repository contain different bash scripts that solves specific task on Linux based system. They are only tested on Linux.  
 Scripts will be added when I have some spare time to develop more.  
 
-## RemoveOSXFiles.sh
+## rmosxf.sh
 The script removes MAC OS X specific files on your system, which for now is the MACOSX folder and the DS\_Stoyre files.  
 It should not be possible to run the script on MAC OS X, but this feature have not been tested and it should therefore never be run on MAC OS X as it will probably remove important files on the system.  
 
