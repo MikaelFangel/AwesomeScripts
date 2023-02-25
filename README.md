@@ -21,7 +21,7 @@ This is still being worked on and is therefore subject to change!
 This script helps to create detailed commits where you properly acknowledge co-authors who have been a part of this commit.
 
 ### Installation:
-I currently suggest that you create an alias for the bash script.
+I currently suggest that you create an alias wrapping the normal git command for the bash script.
 ```
 alias git="/path/to/gitpolite.sh"
 ```
@@ -30,7 +30,10 @@ The script looks for at file containing your commonly used co-authors. It looks 
 
 ### Usage:
 ```
-git polite
+git polite                    # Runs commit in iterative mode
+git polite -a                 # Adds all just a git commit -a
+git polite -am "my message"   # Adds all and a summary and then only asks for co-authors
+git polite -m "my message"    # Adds only a summary but skips adding all
 ```
  -  Be aware the only way to omit adding co-authors is to hit CTRL-C when at the selection screen.
 
