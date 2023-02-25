@@ -3,7 +3,7 @@
 findconvicts() {
     usualsuspects=~/.gitco_suspects
     suspects="$PWD/.suspects"
-    convicts=$(cat $usualsuspects $suspects 2>/dev/null | grep "\S" | sort | uniq | gum choose --no-limit | sed 's/^/Co-authored-by: /')
+    convicts=$(cat $usualsuspects $suspects <(git shortlog -sne --all | cut  -f 2 | grep -v "$(git config user.name) <$(git config user.email)>" | head -n 5) 2>/dev/null | grep "\S" | sort | uniq | gum choose --no-limit | sed 's/^/Co-authored-by: /')
 }
 
 if [ "$1" = "polite" ]; then
