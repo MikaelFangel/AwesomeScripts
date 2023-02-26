@@ -1,6 +1,7 @@
 #!/bin/env bash
 
 findconvicts() {
+    echo "Choose your co-authors:"
     usualsuspects=~/.gitco_suspects
     suspects="$PWD/.suspects"
     convicts=$(cat $usualsuspects $suspects <(git shortlog -sne --all | cut  -f 2 | grep -v "$(git config user.name) <$(git config user.email)>" | head -n 5) 2>/dev/null | grep "\S" | sort -dut\< -k2,2 | sort | gum choose --no-limit | sed 's/^/Co-authored-by: /')
@@ -20,7 +21,8 @@ if [ "$1" = "polite" ]; then
 
         # If no summary has been provied assume interactive mode
         if [ -z "$summary" ]; then
-            summary=$(gum input --placeholder "Summary of this change")
+            summary=$(gum input --prompt "Summary > " --placeholder "Summary of this change")
+            echo "Description of changes (CTRL+D to finish)"
             description=$(gum write --placeholder "Details of this change (CTRL+D to finish)" --show-line-numbers)
         fi
 
