@@ -26,6 +26,11 @@ I currently suggest that you create an alias wrapping the normal git command for
 alias git="/path/to/gitpolite.sh"
 ```
 
+To make this permanent (assuming that you use bash):
+```
+echo 'alias git="/path/to/gitpolite.sh"' >> ~/.bashrc
+```
+
 The script looks for at file containing your commonly used co-authors. It looks for a file called .gitco_suspects in the ~ directory and also looks for a file called .suspects in your current working directory. The contents of the two files are sorted and duplicates are removed.
 
 ### Usage:
