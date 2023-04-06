@@ -4,7 +4,7 @@ findconvicts() {
     echo "Choose your co-authors:"
     usualsuspects=~/.gitco_suspects
     suspects="$PWD/.suspects"
-    convicts=$(cat $usualsuspects $suspects <(git shortlog -sne --all | cut  -f 2 | grep -v "$(git config user.name) <$(git config user.email)>" | head -n 5) 2>/dev/null | grep "\S" | sort -dut\< -k2,2 | sort | gum choose --no-limit | sed 's/^/Co-authored-by: /')
+    convicts=$(cat $usualsuspects "$suspects" <(git shortlog -sne --all | cut  -f 2 | grep -v "$(git config user.name) <$(git config user.email)>" | head -n 5) 2>/dev/null | grep "\S" | sort -dut\< -k2,2 | sort | gum choose --no-limit | sed 's/^/Co-authored-by: /')
 }
 
 if [ "$1" = "polite" ]; then
@@ -16,6 +16,7 @@ if [ "$1" = "polite" ]; then
             case "$flag" in
                 a) git add --all ;;
                 m) summary="$OPTARG" ;;
+                *) exit 0 ;;
             esac
         done
 
