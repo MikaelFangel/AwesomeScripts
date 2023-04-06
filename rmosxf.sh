@@ -7,11 +7,11 @@ do_clean=1
 
 function clean() {
     if [[ $do_clean -eq 1 ]] ; then
-        find $path -type d -name '__MACOSX' -exec rm -rfv {} +
-        find $path -type f \( -name '.DS_STORE' -o -name '.DS_Store' \) -exec rm -rfv {} +
+        find "$path" -type d -name '__MACOSX' -exec rm -rfv {} + &
+        find "$path" -type f \( -name '.DS_STORE' -o -name '.DS_Store' \) -exec rm -rfv {} +
     else
-        find $path -type d -name '__MACOSX'
-        find $path -type f \( -name '.DS_STORE' -o -name '.DS_Store' \)
+        find "$path" -type d -name '__MACOSX' &
+        find "$path" -type f \( -name '.DS_STORE' -o -name '.DS_Store' \)
     fi
 }
 
@@ -25,7 +25,7 @@ do
         n)
         echo "Running a dry run..."
         do_clean=0 ;;
-        h)
+        *)
         echo \
     'Usage:
     -n      dry-run to print what files will be removed
