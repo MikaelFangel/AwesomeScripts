@@ -21,15 +21,7 @@ This is still being worked on and is therefore subject to change!
 This script helps to create detailed commits where you properly acknowledge co-authors who have been a part of this commit.
 
 ### Installation:
-I currently suggest that you create an alias wrapping the normal git command for the bash script.
-```
-alias git="/path/to/gitpolite.sh"
-```
-
-To make this permanent (assuming that you use bash):
-```
-echo 'alias git="/path/to/gitpolite.sh"' >> ~/.bashrc
-```
+Place the script file in you $PATH and then git will find it and add it as a subcommand.
 
 The script looks for at file containing your commonly used co-authors. It looks for a file called .gitco_suspects in the ~ directory and also looks for a file called .suspects in your current working directory. The contents of the two files are sorted and duplicates are removed.
 
