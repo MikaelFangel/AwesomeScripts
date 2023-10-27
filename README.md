@@ -24,12 +24,8 @@ compress input.pdf            # Returns the compress pdf as out.pdf
 ### Dependencies:
  - ghostscript
 
-## gitpolite.sh
-### ⚠️ WARNING ⚠️
-This is still being worked on and is therefore subject to change!
-
-### Description:
-This script helps to create detailed commits where you properly acknowledge co-authors who have been a part of this commit.
+## git-polite
+A git sub-command that helps to create detailed commits where you properly acknowledge co-authors who have been a part of this commit.
 
 ### Installation:
 Place the script file in you $PATH and then git will find it and add it as a subcommand.
