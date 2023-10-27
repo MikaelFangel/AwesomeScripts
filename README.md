@@ -18,7 +18,7 @@ Sensible defaults for compressing pdfs with large images.
 
 ### Usage:
 ```
-compress input.pdf            # Returns the compress pdf as out.pdf
+compresspdf.sh input.pdf      # Returns the compress pdf as out.pdf
 ```
 
 ### Dependencies:
