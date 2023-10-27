@@ -13,6 +13,17 @@ It should not be possible to run the script on MAC OS X, but this feature has no
 
 The above flags can be used in combination with one and another.  
 
+## compresspdf.sh
+Sensible defaults for compressing pdfs with large images.
+
+### Usage:
+```
+compress input.pdf            # Returns the compress pdf as out.pdf
+```
+
+### Dependencies:
+ - ghostscript
+
 ## gitpolite.sh
 ### ⚠️ WARNING ⚠️
 This is still being worked on and is therefore subject to change!
